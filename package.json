@@ -1,0 +1,43 @@
+{
+  "name": "ticketsystem",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@types/webrtc": "0.0.23",
+    "history": "^4.7.2",
+    "prop-types": "^15.6.2",
+    "react": "16.6.0-alpha.8af6728",
+    "react-dom": "^16.6.3",
+    "react-native": "0.57.4",
+    "react-native-maps": "^0.22.1",
+    "react-native-modal": "^7.0.2",
+    "react-native-overlay": "^0.5.0",
+    "react-native-responsive-screen": "^1.1.10",
+    "react-native-router-flux": "^4.0.6",
+    "react-native-super-grid": "^2.4.4",
+    "react-native-toaster": "^1.2.2",
+    "react-redux": "^6.0.0",
+    "react-router": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-form": "^8.0.4",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^0.16.2"
+  },
+  "devDependencies": {
+    "babel-jest": "23.6.0",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "0.49.0",
+    "react-test-renderer": "16.6.0-alpha.8af6728"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
