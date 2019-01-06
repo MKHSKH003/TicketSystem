@@ -1,0 +1,9 @@
+C:\Users\dell\Downloads\Web-Api-with-.NetCore-Mysql-master\TicketSystemApi\bin\Debug\netcoreapp2.1\TicketSystemApi.deps.json
+C:\Users\dell\Downloads\Web-Api-with-.NetCore-Mysql-master\TicketSystemApi\bin\Debug\netcoreapp2.1\TicketSystemApi.dll
+C:\Users\dell\Downloads\Web-Api-with-.NetCore-Mysql-master\TicketSystemApi\bin\Debug\netcoreapp2.1\TicketSystemApi.pdb
+C:\Users\dell\Downloads\Web-Api-with-.NetCore-Mysql-master\TicketSystemApi\obj\Debug\netcoreapp2.1\TicketSystemApi.csprojResolveAssemblyReference.cache
+C:\Users\dell\Downloads\Web-Api-with-.NetCore-Mysql-master\TicketSystemApi\obj\Debug\netcoreapp2.1\TicketSystemApi.csproj.CoreCompileInputs.cache
+C:\Users\dell\Downloads\Web-Api-with-.NetCore-Mysql-master\TicketSystemApi\obj\Debug\netcoreapp2.1\TicketSystemApi.AssemblyInfoInputs.cache
+C:\Users\dell\Downloads\Web-Api-with-.NetCore-Mysql-master\TicketSystemApi\obj\Debug\netcoreapp2.1\TicketSystemApi.AssemblyInfo.cs
+C:\Users\dell\Downloads\Web-Api-with-.NetCore-Mysql-master\TicketSystemApi\obj\Debug\netcoreapp2.1\TicketSystemApi.dll
+C:\Users\dell\Downloads\Web-Api-with-.NetCore-Mysql-master\TicketSystemApi\obj\Debug\netcoreapp2.1\TicketSystemApi.pdb

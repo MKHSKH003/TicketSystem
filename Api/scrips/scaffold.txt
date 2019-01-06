@@ -1,0 +1,1 @@
+Scaffold-DbContext "server=41.185.8.134;userid=targeton_root;password=WebDev@2017;database=targeton_TicketSystem;SSL Mode=None;" MySql.Data.EntityFrameworkCore -OutputDir targeton_TicketSystem -Tables userlist -f

@@ -1,0 +1,5 @@
+{
+  "name": "TicketSystem",
+  "displayName": "TicketSystem",
+  "ApiRestWebServer": "http://10.0.2.2:5201"
+}
