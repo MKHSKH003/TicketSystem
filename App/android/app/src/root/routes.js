@@ -3,7 +3,7 @@ import { Router, Scene, Actions, ActionConst } from 'react-native-router-flux';
 import Toaster, { ToastStyles } from 'react-native-toaster';
 
 import LoginScreen from '../containers/login/login';
-//import LoginScreen from '../components/login/components/LoginScreen';
+import _ImageSlider from '../components/main-screen/image-slider';
 import SecondScreen from '../components/login/components/SecondScreen';
 import NewsFeed from '../components/news/news-feed';
 import LoginFailure from '../components/notifications/login-failure';
@@ -14,7 +14,7 @@ export default class Routes extends Component {
 	    <Router>
 	      <Scene key="root">
 	        <Scene key="loginScreen"
-	          component={LoginScreen}
+	          component={_ImageSlider}
 	        	animation='fade'
 	          hideNavBar={true}
 	          initial={true}
