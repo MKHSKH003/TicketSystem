@@ -8,13 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="targeton_TicketSystem\**" />
-    <Content Remove="targeton_TicketSystem\**" />
-    <EmbeddedResource Remove="targeton_TicketSystem\**" />
-    <None Remove="targeton_TicketSystem\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="wwwroot\" />
     <Folder Include="Model\" />
     <Folder Include="Connector\" />

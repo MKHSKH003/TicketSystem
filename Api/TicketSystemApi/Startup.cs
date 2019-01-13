@@ -7,8 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using TicketSystemApi.Services.Login;
 using Microsoft.EntityFrameworkCore;
+using TicketSystemApi.Services;
 
 namespace TicketSystemApi
 {
@@ -32,10 +32,13 @@ namespace TicketSystemApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<Entities.TicketSystem.Context>(options => 
+            services.AddDbContext<Entities.Context>(options => 
             options.UseMySQL(connstring));
-           
+
             // Add application services.
+            services.AddScoped<IMessagesService, MessagesService>();
+            services.AddScoped<IMoviesService, MoviesService>();
+            services.AddScoped<IBookingService, BookingService>();
             services.AddScoped<ILoginService, LoginService>();
             services.AddMvc();
         }

@@ -18,7 +18,7 @@ export function* userLogin(action) {
       let isLoginSucess = yield call(loginApi.login,loginBaseUrl,action.username, action.password);
       if(isLoginSucess._bodyText == 'true')
       {
-        Actions.newsFeed();
+        Actions.mainScreen();
         yield put(loginSuccess());
       }
       else if(isLoginSucess._bodyText == 'false')

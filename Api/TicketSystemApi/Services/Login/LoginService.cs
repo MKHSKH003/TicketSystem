@@ -1,14 +1,14 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TicketSystemApi.Services.Login
+namespace TicketSystemApi.Services
 {
     public class LoginService : ILoginService
     {
-        private readonly Entities.TicketSystem.Context _ticketSystemDbContext;
-        public LoginService(Entities.TicketSystem.Context ticketSystemDbContext)
+        private readonly Entities.Context _ticketSystemDbContext;
+        public LoginService(Entities.Context ticketSystemDbContext)
         {
             _ticketSystemDbContext = ticketSystemDbContext;
         }

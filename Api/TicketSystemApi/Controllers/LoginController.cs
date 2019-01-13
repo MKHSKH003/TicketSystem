@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using TicketSystemApi.Connector;
 using TicketSystemApi.Model;
 using Microsoft.AspNetCore.Mvc;
-using TicketSystemApi.Services.Login;
+using TicketSystemApi.Services;
 
 namespace TicketSystemApi.Controllers
 {
