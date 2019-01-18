@@ -1,0 +1,54 @@
+{
+  "_args": [
+    [
+      "@ag-inst/react-notifications@1.0.1",
+      "C:\\dev\\HR Terminations\\mercury.app-hr-terminations\\src\\Hr-Terminations-App"
+    ]
+  ],
+  "_from": "@ag-inst/react-notifications@1.0.1",
+  "_id": "@ag-inst/react-notifications@1.0.1",
+  "_inBundle": false,
+  "_integrity": "sha1-dUVpBgSmz4Z0uIHzT7fgzvKHAbc=",
+  "_location": "/@ag-inst/react-notifications",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@ag-inst/react-notifications@1.0.1",
+    "name": "@ag-inst/react-notifications",
+    "escapedName": "@ag-inst%2freact-notifications",
+    "scope": "@ag-inst",
+    "rawSpec": "1.0.1",
+    "saveSpec": null,
+    "fetchSpec": "1.0.1"
+  },
+  "_requiredBy": [
+    "/",
+    "/@ag-inst/react-mimic-user"
+  ],
+  "_resolved": "https://theluggage-agct.gray.net:443/artifactory/api/npm/npm-institutional-development/@ag-inst/react-notifications/-/@ag-inst/react-notifications-1.0.1.tgz",
+  "_spec": "1.0.1",
+  "_where": "C:\\dev\\HR Terminations\\mercury.app-hr-terminations\\src\\Hr-Terminations-App",
+  "author": {
+    "name": "DevCartel"
+  },
+  "dependencies": {
+    "@ag-inst/api-validation-helper": "^1.0.2",
+    "react-redux-toastr": "^6.2.3"
+  },
+  "license": "UNLICENCED",
+  "main": "lib/index.js",
+  "name": "@ag-inst/react-notifications",
+  "peerDependencies": {
+    "react": "15.x",
+    "redux-form": "6.x",
+    "redux-saga": "0.x"
+  },
+  "publishConfig": {
+    "registry": "https://theluggage-agct.gray.net/artifactory/api/npm/npm-institutional-development-local"
+  },
+  "scripts": {
+    "build": "babel src --out-dir lib --ignore .test.js --copy-files"
+  },
+  "version": "1.0.1"
+}

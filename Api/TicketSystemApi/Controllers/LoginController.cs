@@ -6,10 +6,12 @@ using TicketSystemApi.Connector;
 using TicketSystemApi.Model;
 using Microsoft.AspNetCore.Mvc;
 using TicketSystemApi.Services;
+using Microsoft.AspNetCore.Cors;
 
 namespace TicketSystemApi.Controllers
 {
     [Route("api/user-login")]
+    [EnableCors("MyPolicy")]
     public class LoginController : Controller
     {
         private readonly ILoginService _loginService;

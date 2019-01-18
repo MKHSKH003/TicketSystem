@@ -1,0 +1,48 @@
+{
+  "_args": [
+    [
+      "@ag-inst/api-validation-helper@1.0.2",
+      "C:\\dev\\HR Terminations\\mercury.app-hr-terminations\\src\\Hr-Terminations-App"
+    ]
+  ],
+  "_from": "@ag-inst/api-validation-helper@1.0.2",
+  "_id": "@ag-inst/api-validation-helper@1.0.2",
+  "_inBundle": false,
+  "_integrity": "sha1-KYP928Z7fjgjI8mfWW8X5idmlec=",
+  "_location": "/@ag-inst/api-validation-helper",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@ag-inst/api-validation-helper@1.0.2",
+    "name": "@ag-inst/api-validation-helper",
+    "escapedName": "@ag-inst%2fapi-validation-helper",
+    "scope": "@ag-inst",
+    "rawSpec": "1.0.2",
+    "saveSpec": null,
+    "fetchSpec": "1.0.2"
+  },
+  "_requiredBy": [
+    "/",
+    "/@ag-inst/react-notifications"
+  ],
+  "_resolved": "https://theluggage-agct.gray.net:443/artifactory/api/npm/npm-institutional-development/@ag-inst/api-validation-helper/-/@ag-inst/api-validation-helper-1.0.2.tgz",
+  "_spec": "1.0.2",
+  "_where": "C:\\dev\\HR Terminations\\mercury.app-hr-terminations\\src\\Hr-Terminations-App",
+  "author": {
+    "name": "DevCartel"
+  },
+  "dependencies": {
+    "flat": "^2.0.1"
+  },
+  "license": "UNLICENCED",
+  "main": "lib/index.js",
+  "name": "@ag-inst/api-validation-helper",
+  "publishConfig": {
+    "registry": "https://theluggage-agct.gray.net/artifactory/api/npm/npm-institutional-development-local"
+  },
+  "scripts": {
+    "build": "babel src --out-dir lib --ignore .test.js --copy-files"
+  },
+  "version": "1.0.2"
+}
