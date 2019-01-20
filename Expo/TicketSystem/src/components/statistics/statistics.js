@@ -19,7 +19,7 @@ export default class Statistics extends Component {
     return (
         <ScrollView >
             <Header props={this.props}/>
-            <Text style={{textAlign:'center',fontSize:25, color:'#34495e', align:'center'}}>Bookings</Text>
+            <Text style={{textAlign:'center',fontSize:25, color:'#34495e',marginTop:30}}>BOOKINGS</Text>
             <LoadingBookings />
             <PieChartWithCenteredLabels bookings={this.props.bookings}/>
             <ChartLables/>

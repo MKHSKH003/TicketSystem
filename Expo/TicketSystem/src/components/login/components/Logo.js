@@ -20,9 +20,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-     borderWidth: 2,
-    borderColor: 'orange',
-    margin: 0
     
   },
   image: {

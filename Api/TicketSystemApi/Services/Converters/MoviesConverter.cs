@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using TicketSystemApi.Entities;
+using TicketSystemApi.Models;
 
 namespace TicketSystemApi.Converters
 {
@@ -15,6 +16,15 @@ namespace TicketSystemApi.Converters
                 Name=movie.Name,
                 Price=movie.Price,
                 Image=movie.Image
+            };
+        }
+
+        public static Select ConvertMovieToModel(Movies movie)
+        {
+            return new Select()
+            {
+                label = movie.Name,
+                value = (movie.Name+","+movie.Price)
             };
         }
 

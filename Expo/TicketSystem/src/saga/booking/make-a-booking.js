@@ -16,7 +16,8 @@ import { bookingBaseUrl } from "../../constants/api-selectors.js";
 export function* booking(action) {
   try 
   {   
-      let isbookingSucess = yield call(bookingApi.booking,bookingBaseUrl,action.name,action.cell,action.email, action.location, action.people, action.film,action.date, action.paymentDate);
+     console.log(action.name,action.cell,action.email, action.location, action.people, action.film,action.date, action.paymentDate, action.bookedBy);
+      let isbookingSucess = yield call(bookingApi.booking,bookingBaseUrl,action.name,action.cell,action.email, action.location, action.people, action.film,action.date, action.paymentDate, action.bookedBy);
       if(isbookingSucess._bodyText == 'true')
       {
         yield put(ToastActionsCreators.displaySuccess('Booking sent successfully!', 5000));
@@ -25,7 +26,7 @@ export function* booking(action) {
       }
       else
       { 
-        yield put(ToastActionsCreators.displayError('Failed, please fill in '+isbookingSucess._bodyText, 2000));
+        yield put(ToastActionsCreators.displayError('Failed, please fill in '+isbookingSucess._bodyText, 5000));
         yield put(bookingFailure());
       }
   }

@@ -1,39 +1,36 @@
 import React, { Component } from 'react';
 import {
   StyleSheet, Text, View, TouchableOpacity, Image,
-  Alert, ScrollView, FlatList, Button
+  Alert, ScrollView, FlatList, Button, Modal, TouchableHighlight
 } from 'react-native';
 
 import Header from '../Header/header.js';
 import LoadingBookings from '../../containers/booking/loading-bookings';
+import UpdateBookingModal from './update-booking-modal.js';
 
 export default class Bookings extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      data: [
-        {id:1,image:"https://images-na.ssl-images-amazon.com/images/I/517NCGQ54GL._SX295_BO1,204,203,200_.jpg",name:"Skhumbuzo",cell:"0845310089",email:"MKHSKH003@myuct.ac.za",location:"Kenwyn",people:"26",film:"Born Africa",date:"20-Jan-19",payment:"30-Jan-19",status:"unpaid"},
-        {id:2,image:"https://lorempixel.com/400/200/nature/2/",name:"Skhumbuzo",cell:"0845310089",email:"MKHSKH003@myuct.ac.za",location:"Kenwyn",people:"26",film:"Born Africa",date:"20-Jan-19",payment:"30-Jan-19",status:"unpaid"},
-        {id:3,image:"https://lorempixel.com/400/200/nature/3/",name:"Skhumbuzo",cell:"0845310089",email:"MKHSKH003@myuct.ac.za",location:"Kenwyn",people:"26",film:"Born Africa",date:"20-Jan-19",payment:"30-Jan-19",status:"unpaid"},
-        {id:4,image:"https://lorempixel.com/400/200/nature/4/",name:"Skhumbuzo",cell:"0845310089",email:"MKHSKH003@myuct.ac.za",location:"Kenwyn",people:"26",film:"Born Africa",date:"20-Jan-19",payment:"30-Jan-19",status:"unpaid"},
-        {id:5,image:"https://lorempixel.com/400/200/nature/5/",name:"Skhumbuzo",cell:"0845310089",email:"MKHSKH003@myuct.ac.za",location:"Kenwyn",people:"26",film:"Born Africa",date:"20-Jan-19",payment:"30-Jan-19",status:"unpaid"},
-        {id:6,image:"https://lorempixel.com/400/200/nature/6/",name:"Skhumbuzo",cell:"0845310089",email:"MKHSKH003@myuct.ac.za",location:"Kenwyn",people:"26",film:"Born Africa",date:"20-Jan-19",payment:"30-Jan-19",status:"unpaid"},
-        {id:7,image:"https://lorempixel.com/400/200/nature/7/",name:"Skhumbuzo",cell:"0845310089",email:"MKHSKH003@myuct.ac.za",location:"Kenwyn",people:"26",film:"Born Africa",date:"20-Jan-19",payment:"30-Jan-19",status:"unpaid"},
-        {id:8,image:"https://lorempixel.com/400/200/nature/8/",name:"Skhumbuzo",cell:"0845310089",email:"MKHSKH003@myuct.ac.za",location:"Kenwyn",people:"26",film:"Born Africa",date:"20-Jan-19",payment:"30-Jan-19",status:"unpaid"},
-        {id:2,image:"https://lorempixel.com/400/200/nature/9/",name:"Skhumbuzo",cell:"0845310089",email:"MKHSKH003@myuct.ac.za",location:"Kenwyn",people:"26",film:"Born Africa",date:"20-Jan-19",payment:"30-Jan-19",status:"unpaid"},
-      ]
+      modalVisible:false,
+      itemSelected:[],
     };
+
+    this.setModalVisible = this.setModalVisible.bind(this);
+  }
+  
+  setModalVisible(visible) {
+    this.setState({modalVisible: visible});
   }
 
   render() {
-      const {bookings} = this.props;
+      const {bookings, updateBookingStatus, deleteBooking, username} = this.props;
     return (
       <ScrollView>
       <Header props={this.props} />
       <LoadingBookings />
       <View style={styles.container}>
-        
         <FlatList style={styles.list}
           data={bookings? bookings.reverse():null}
           keyExtractor= {(item) => {
@@ -48,6 +45,15 @@ export default class Bookings extends Component {
             const item = post.item;
             return (
               <View style={styles.card}>
+                <UpdateBookingModal
+                      username={username}
+                      deleteBooking={deleteBooking}  
+                      updateBookingStatus={updateBookingStatus} 
+                      item={this.state.itemSelected}  
+                      setModalVisible={this.setModalVisible} 
+                      modalVisible={this.state.modalVisible}
+                 />
+                <TouchableOpacity onPress={()=>this.setState({modalVisible: true, itemSelected:item})}> 
                 <Image style={styles.cardImage} source={{uri:item.image}}/>
                 <View style={styles.cardHeader}>
                   <View>
@@ -61,13 +67,14 @@ export default class Bookings extends Component {
                       <Image style={styles.iconData} source={{uri: 'https://png.icons8.com/color/96/3498db/calendar.png'}}/>
                     </View>
                     <View style={styles.timeContainer}>
-                      <Text style={styles.time}>Payment: {item.payment}</Text>
+                      <Text style={styles.time}>Payment: {item.paymentDate}</Text>
                       <Image style={styles.iconData} source={{uri: 'https://png.icons8.com/color/96/3498db/calendar.png'}}/>
                     </View>
                     <Text style={styles.time}>Status: {item.status}</Text>
                     <Text style={styles.time}>Cost  : R{item.cost}</Text>
                   </View>
                 </View>
+                </TouchableOpacity>
               </View>
             )
           }}/>

@@ -114,8 +114,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-     borderWidth: 2,
-    borderColor: 'red',
+    //  borderWidth: 2,
+    // borderColor: 'red',
     
   },
 
@@ -136,8 +136,8 @@ const styles = StyleSheet.create({
     right: 20,
   },
   btnEyeSAlt2: {
-     top: hp('0')+hp('-15'),   
-     //flex: 0.5,  
+     top: hp('0')+hp('-19'),   
+     height: hp('30%'), 
   },
 
   iconEye: {
@@ -154,9 +154,6 @@ const styles = StyleSheet.create({
   responsiveBox: {
     width: wp('84.5%'),
     height: hp('50%'),
-    borderWidth: 2,
-    borderColor: 'orange',
-    
     justifyContent: 'center' ,
     alignSelf:"center",
 

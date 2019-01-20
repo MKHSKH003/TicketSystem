@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  Image,
-  Alert,
-  ScrollView,
-  TextInput,
-  FlatList,
-  Button
+  StyleSheet,Text,View,
+  TouchableOpacity,Image,Alert,
+  ScrollView,TextInput,FlatList,
+  Button,Keyboard
 } from 'react-native';
 
 import Header from '../Header/header.js';
@@ -21,7 +15,13 @@ export default class ChatRoom extends Component {
     super(props);
     this.state = {
         userMessage:'',
+        toggleKeyboardOpen:false
     };
+  }
+
+  componentDidMount () {
+    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', () => this.setState({toggleKeyboardOpen:true}));
+    this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', () => this.setState({toggleKeyboardOpen:false}));
   }
 
   renderDate (date) {
@@ -41,7 +41,7 @@ export default class ChatRoom extends Component {
         <FlatList style={styles.list}
           data={messages}
           keyExtractor= {(item) => {
-            return item.id;
+            return (item.id).toString();
           }}
           renderItem={(message) => {
             console.log(item);
@@ -58,19 +58,19 @@ export default class ChatRoom extends Component {
               </View>
             )
           }}/>
-        <View style={styles.footer}>
-          <View style={styles.inputContainer}>
-            <TextInput style={styles.inputs}
-                placeholder="Write a message..."
-                underlineColorAndroid='transparent'
-                value={this.state.userMessage}
-                onChangeText={(name_address) => this.setState({userMessage:name_address})}/>
-          </View>
+          <View style={[styles.footer,[this.state.toggleKeyboardOpen && styles.inputContainerAlt]]}>
+            <View style={[styles.inputContainer]}>
+              <TextInput style={styles.inputs}
+                  placeholder="Write a message..."
+                  underlineColorAndroid='transparent'
+                  value={this.state.userMessage}
+                  onChangeText={(name_address) => this.setState({userMessage:name_address})}/>
+            </View>
 
-            <TouchableOpacity style={styles.btnSend} onPress={()=>{this.props.sendMessage(username,this.state.userMessage);this.setState({userMessage:''})}}>
-              <Image source={{uri:"https://png.icons8.com/small/75/ffffff/filled-sent.png"}} style={styles.iconSend}  />
-            </TouchableOpacity>
-        </View>
+              <TouchableOpacity style={styles.btnSend} onPress={()=>{this.props.sendMessage(username,this.state.userMessage);this.setState({userMessage:''})}}>
+                <Image source={{uri:"https://png.icons8.com/small/75/ffffff/filled-sent.png"}} style={styles.iconSend}  />
+              </TouchableOpacity>
+          </View>
       </View>
     );
   }
@@ -113,6 +113,9 @@ const styles = StyleSheet.create({
     alignItems:'center',
     flex:1,
     marginRight:10,
+  },
+  inputContainerAlt:{
+   marginBottom:270,
   },
   inputs:{
     height:40,

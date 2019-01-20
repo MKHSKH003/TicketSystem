@@ -6,7 +6,7 @@ import MainScreen from '../containers/main-screen/main';
 import Booking from '../containers/booking/make-a-booking';
 import Bookings from '../containers/booking/view-bookings'
 import Movies from '../containers/movies/view-movies'
-import Calculator from '../components/calculator/calculator';
+import Calculator from '../containers/calculator/calculator';
 import Statistics from '../containers/statistics/statistics';
 import ChatRoom from '../containers/chat-room/messages';
 import NewsFeed from '../components/news/news-feed';

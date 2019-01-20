@@ -1,30 +1,61 @@
 import React, { Component } from 'react';
+import { Button } from 'react-native-elements';
 import {
   StyleSheet, Text, View, TouchableOpacity, Image,
-  Alert, ScrollView, FlatList, Button
+  Alert, ScrollView, FlatList
 } from 'react-native';
 
 import Header from '../Header/header.js';
 import LoadingMovies from '../../containers/movies/loading-movies';
+import AddMoviesModal from './add-movie-modal'
+import UpdateMoviesModal from './update-movie-modal'
 
 export default class Movies extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
+      modalVisible:false,
+      _modalVisible:false,
+      itemSelected:[],
       data: [
         {id:1,name:"Born Africa",price:"20",image:"https://images-na.ssl-images-amazon.com/images/I/517NCGQ54GL._SX295_BO1,204,203,200_.jpg"},
         {id:2,name:"Black Panther",price:"25",image:"https://nerdist.com/wp-content/uploads/2018/02/10763.jpg"},
        ]
     };
+    this.setModalVisible = this.setModalVisible.bind(this);
+    this._setModalVisible = this._setModalVisible.bind(this);
+  }
+  
+  setModalVisible(visible) {
+    this.setState({modalVisible: visible});
+  }
+
+  _setModalVisible(visible) {
+    this.setState({_modalVisible: visible});
   }
 
   render() {
-      const {movies} = this.props;
+      const {movies, addMovie, updateMoviePrice,deleteMovie, username} = this.props;
     return (
       <ScrollView>
       <Header props={this.props} />
+        <Button
+          style={{marginTop:20}}
+          color='#fff'
+          title='ADD MOVIE'
+          onPress={()=>{this.setModalVisible(true)}}
+        />
       <LoadingMovies />
+      <AddMoviesModal username={username} setModalVisible={this.setModalVisible} addMovie={addMovie} modalVisible={this.state.modalVisible}/>
+      <UpdateMoviesModal 
+          username={username}
+          item={this.state.itemSelected}
+          deleteMovie={deleteMovie} 
+          updateMoviePrice={updateMoviePrice} 
+          setModalVisible={this._setModalVisible} 
+          modalVisible={this.state._modalVisible}
+       />
       <View style={styles.container}>
         
         <FlatList style={styles.list}
@@ -41,13 +72,15 @@ export default class Movies extends Component {
             const item = post.item;
             return (
               <View style={styles.card}>
-                <Image style={styles.cardImage} source={{uri:item.image}}/>
-                <View style={styles.cardHeader}>
-                  <View>
-                    <Text style={styles.title}>{item.name}</Text>
-                    <Text style={styles.description}>Price: R{item.price}/Person</Text>
+                <TouchableOpacity onPress={()=>{this.setState({_modalVisible: true, itemSelected:item})}}>
+                  <Image style={styles.cardImage} source={{uri:item.image}}/>
+                  <View style={styles.cardHeader}>
+                    <View>
+                      <Text style={styles.title}>{item.name}</Text>
+                      <Text style={styles.description}>Price: R{item.price}/Person</Text>
+                    </View>
                   </View>
-                </View>
+                </TouchableOpacity>
               </View>
             )
           }}/>

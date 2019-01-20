@@ -8,7 +8,9 @@ namespace TicketSystemApi.Services
 {
     public interface IBookingService
     {
-        string isBookingSuccess(string name, int cell, string email, string location, int people, string film, string date, string paymentDate);
+        string IsBookingSuccess(string name, int cell, string email, string location, int people, string film, string date, string paymentDate, string bookedBy);
         IEnumerable<Booking> Get();
+        IEnumerable<Booking> UpdateStatus(int id, string username);
+        IEnumerable<Booking> Delete(int id, string username);
     }
 }

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TicketSystemApi.Connector;
 using TicketSystemApi.Model;
 using Microsoft.AspNetCore.Mvc;
 using TicketSystemApi.Services;
 using TicketSystemApi.Entities;
+using TicketSystemApi.Models;
 
 namespace TicketSystemApi.Controllers
 {
@@ -21,9 +21,27 @@ namespace TicketSystemApi.Controllers
 
         // GET api/movies
         [HttpGet("get-all-movies")]
-        public IEnumerable<Movies> Get()
+        public (IEnumerable<Movies> movies, IEnumerable<Select> options) Get()
         {
             return _moviesService.Get();
+        }
+
+        [HttpGet("delete-movie")]
+        public (IEnumerable<Movies> movies, IEnumerable<Select> options) Delete([FromQuery] int id, [FromQuery] string username)
+        {
+            return _moviesService.Delete(id, username);
+        }
+
+        [HttpGet("update-movie-price")]
+        public (IEnumerable<Movies> movies, IEnumerable<Select> options) UpdatePrice([FromQuery] int id, [FromQuery] int price, [FromQuery] string username)
+        {
+            return _moviesService.UpdatePrice(id, price, username);
+        }
+
+        [HttpGet("add-movie")]
+        public ((IEnumerable<Movies> movies, IEnumerable<Select> options), string error) AddMovie([FromQuery] string name, [FromQuery] int price, [FromQuery] string url, [FromQuery] string username)
+        {
+            return _moviesService.AddMovie(name, price, url, username);
         }
 
         // GET api/values/5
@@ -45,10 +63,6 @@ namespace TicketSystemApi.Controllers
         {
         }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+      
     }
 }

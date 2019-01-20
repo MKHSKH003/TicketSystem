@@ -18,7 +18,7 @@
     "TicketSystemApi": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:5201/api/user-login/users-list",
+      "launchUrl": "http://localhost:5201/welcome/welcome-note",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

@@ -13,7 +13,8 @@ export const initialState = {
         people:null,
         film:null,
         date:null,
-        paymentDate:null
+        paymentDate:null,
+        bookedBy:null
     },
     status: {
         bookingError: false,
@@ -33,7 +34,8 @@ const bookingReducer = (state = initialState, action) => {
                     people:action.people,
                     film:action.film,
                     date:action.date,
-                    paymentDate:action.paymentDate
+                    paymentDate:action.paymentDate,
+                    bookedBy:action.bookedBy
                 },
                 status:{
                     bookingSuccess: false 

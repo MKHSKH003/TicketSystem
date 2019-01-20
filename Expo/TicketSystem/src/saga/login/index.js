@@ -15,7 +15,6 @@ import { loginBaseUrl } from "../../constants/api-selectors.js";
 export function* userLogin(action) {
   try 
   {   
-    console.log("ok here");
       let isLoginSucess = yield call(loginApi.login,loginBaseUrl,action.username, action.password);
       if(isLoginSucess._bodyText == 'true')
       {
@@ -29,9 +28,8 @@ export function* userLogin(action) {
   }
   catch(e)
   {
-    console.log("why");
     yield put(loginFailure());
-    console.log("Failure while loggin in.",e);
+    yield put(ToastActionsCreators.displayError('Failed, check your internet connections and retry.', 20000));
   }
 
 }

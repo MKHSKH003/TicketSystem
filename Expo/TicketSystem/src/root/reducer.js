@@ -5,6 +5,7 @@ import newsReducer  from '../reducers/news'
 import loginReducer  from '../reducers/login'
 import bookingReducer  from '../reducers/booking/make-a-booking'
 import bookingsReducer  from '../reducers/booking/get-all-bookings'
+import updateBookingReducer from '../reducers/booking/update-booking'
 import moviesReducer  from '../reducers/movies/get-all-movies'
 import messagesReducer  from '../reducers/chat-room/get-all-messages'
 import sendMessageReducer  from '../reducers/chat-room/send-message'
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
     moviesReducer,
     messagesReducer,
     sendMessageReducer,
+    updateBookingReducer,
     toast
 });
 

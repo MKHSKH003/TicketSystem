@@ -22,7 +22,7 @@ export function* bookings() {
   catch(e)
   {
     
-    yield put(ToastActionsCreators.displayError(e, 20000));
+    yield put(ToastActionsCreators.displayError('Failed, check your internet connections and retry.', 20000));
   }
 
 }

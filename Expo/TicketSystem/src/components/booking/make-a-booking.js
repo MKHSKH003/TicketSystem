@@ -4,7 +4,8 @@ import { Input, Button } from 'react-native-elements';
 import { TextField } from 'react-native-material-textfield';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import {DatePickerIOS} from 'react-native';
-import dateFormat from 'dateformat'
+import dateFormat from 'dateformat';
+import SelectInput from '@tele2/react-native-select-input';
 
 import Inputs from './inputs-section';
 import Header from '../Header/header.js';
@@ -18,7 +19,7 @@ export default class Booking extends Component {
           email:null,
           location:null,
           people:null,
-          film:null,
+          film:'Tab to select',
           date:new Date(),
           paymentDate:new Date(),
       }
@@ -38,6 +39,9 @@ export default class Booking extends Component {
 
   render(value) 
   {
+
+      const {username, options}=this.props
+      
     return (
     <ScrollView>
         <Header props={this.props} />
@@ -48,17 +52,17 @@ export default class Booking extends Component {
             <Inputs  label={'Location'} userEntry={this.location} />
             <Inputs  label={'Number of people'} isNumeric={true} userEntry={this.people}/>
             
-            <Row>
-                <Text style={{fontSize: 15,marginTop:25}}>Select film:      </Text>
-                <Picker
-                    style={{ height: 70, width: 100 }}
-                    onValueChange={(itemValue) => this.setState({film: itemValue})}>
-                    <Picker.Item label="Select film:" value="java" />
-                    <Picker.Item label="Born Africa" value="Born Africa" />
-                    <Picker.Item label="Black Panther" value="Black Panther" />
-                </Picker>
-            </Row>
-            
+      
+            <View style={{fontSize: 15,marginTop:30}}>
+                <Text style={{fontSize: 15}}>Select film:</Text>
+                <SelectInput 
+                    value={this.state.film} 
+                    style={{fontSize:10}} 
+                    options={options} 
+                    onChange={(value) => {this.setState({film:value})} }
+                    />
+            </View>
+
             <Text style={{fontSize: 17,marginTop:10}}>Date</Text>
             <DatePickerIOS style={{width:375, marginTop:5}}
                 date={this.state.date}
@@ -73,7 +77,18 @@ export default class Booking extends Component {
             <Button
                 color='#fff'
                 title='Submit'
-                onPress={()=>this.props.booking(this.state.name,this.state.cell,this.state.email,this.state.location,this.state.people,this.state.film,dateFormat(this.state.date,"dd-mmm-yy"),dateFormat(this.state.paymentDate,"dd-mmm-yy"))}
+                onPress={()=>
+                    this.props.booking(
+                        this.state.name,
+                        this.state.cell,
+                        this.state.email,
+                        this.state.location,
+                        this.state.people,
+                        this.state.film,
+                        dateFormat(this.state.date,"dd-mmm-yy"),
+                        dateFormat(this.state.paymentDate,"dd-mmm-yy"),
+                        username
+                    )}
             />
         </View>
     </ScrollView>

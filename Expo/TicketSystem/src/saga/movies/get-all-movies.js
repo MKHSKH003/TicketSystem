@@ -16,8 +16,8 @@ export function* movies() {
   try 
   {   
       const movies = yield call(moviesApi.getAllMovies,moviesBaseUrl);
-      if(movies==undefined){throw Error;}
-      yield put(loadMoviesSuccess(movies));
+      if(movies.item1==undefined){throw Error;}
+      yield put(loadMoviesSuccess(movies.item1,movies.item2));
   }
   catch(e)
   {

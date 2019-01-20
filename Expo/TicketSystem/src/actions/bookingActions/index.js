@@ -5,9 +5,12 @@ export const BOOKING_REQUEST = 'BOOKING_REQUEST';
 export const BOOKING_SUCCESS = 'BOOKING_SUCCESS';
 export const BOOKING_FAILURE ='BOOKING_FAILURE';
 
-export const bookingRequest = (name,cell,email,location,people,film,date,paymentDate) => ({
+export const UPDATE_BOOKING_STATUS_REQUEST = 'UPDATE_BOOKING_STATUS_REQUEST';
+export const DELETE_BOOKING_REQUEST = 'DELETE_BOOKING_REQUEST';
+
+export const bookingRequest = (name,cell,email,location,people,film,date,paymentDate,bookedBy) => ({
       type: BOOKING_REQUEST, name,cell,email,
-      location,people,film,date,paymentDate
+      location,people,film,date,paymentDate,bookedBy
 });
 
 export const bookingSuccess = () => ({
@@ -27,4 +30,16 @@ export const loadBookingsRequest = () => {
 export const loadBookingsSuccess = (bookings) => ({
       type: LOAD_BOOKINGS_SUCCESS,
       bookings
+});
+
+export const updateBookingStatusRequest = (id, username) => ({
+      type: UPDATE_BOOKING_STATUS_REQUEST,
+      id,
+      username
+});
+
+export const deleteBookingRequest = (id, username) => ({
+      type: DELETE_BOOKING_REQUEST,
+      id,
+      username
 });

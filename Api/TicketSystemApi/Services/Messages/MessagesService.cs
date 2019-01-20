@@ -21,20 +21,15 @@ namespace TicketSystemApi.Services
 
         public IEnumerable<Messages> SendMessage(string username, string message)
         {
-            try
-            {
-                _ticketSystemDbContext.Messages.Add(new Entities.Messages()
-                {
-                    Name = username,
-                    Message = message,
-                    Date = DateTime.Now.ToShortTimeString()
-                });
-                _ticketSystemDbContext.SaveChanges();
-            }
-            catch(Exception)
-            {
 
-            }
+            _ticketSystemDbContext.Messages.Add(new Entities.Messages()
+            {
+                Name = username,
+                Message = message,
+                Date = DateTime.Now.ToShortTimeString()
+            });
+            _ticketSystemDbContext.SaveChanges();
+     
             return Get();
         }
     }

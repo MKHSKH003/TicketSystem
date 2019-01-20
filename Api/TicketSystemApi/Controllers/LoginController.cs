@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TicketSystemApi.Connector;
 using TicketSystemApi.Model;
 using Microsoft.AspNetCore.Mvc;
 using TicketSystemApi.Services;
@@ -11,21 +10,12 @@ using Microsoft.AspNetCore.Cors;
 namespace TicketSystemApi.Controllers
 {
     [Route("api/user-login")]
-    [EnableCors("MyPolicy")]
     public class LoginController : Controller
     {
         private readonly ILoginService _loginService;
         public LoginController(ILoginService loginService)
         {
             _loginService = loginService;
-        }
-
-        // GET api/login
-        [HttpGet("users-list")]
-        public IEnumerable<User> Get()
-        {
-            Conn mysqlGet = new Conn();
-            return mysqlGet.UserList();
         }
 
         [HttpGet("is-login-success")]

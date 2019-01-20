@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TicketSystemApi.Connector;
 using TicketSystemApi.Entities;
 using Microsoft.AspNetCore.Mvc;
 using TicketSystemApi.Services;
@@ -13,9 +12,11 @@ namespace TicketSystemApi.Controllers
     public class BookingController : Controller
     {
         private readonly IBookingService _bookingService;
-        public BookingController(IBookingService bookingService)
+        private readonly IEventLoggerService _eventLoggerService;
+        public BookingController(IBookingService bookingService, IEventLoggerService eventLoggerService)
         {
             _bookingService = bookingService;
+            _eventLoggerService = eventLoggerService;
         }
 
         // GET api/login
@@ -26,9 +27,21 @@ namespace TicketSystemApi.Controllers
         }
 
         [HttpGet("make-a-booking")]
-        public string isBookingSuccess([FromQuery] string name, [FromQuery] int cell, [FromQuery] string email, [FromQuery] string location, [FromQuery] int people, [FromQuery] string film, [FromQuery] string date, [FromQuery] string paymentDate)
+        public string IsBookingSuccess([FromQuery] string name, [FromQuery] int cell, [FromQuery] string email, [FromQuery] string location, [FromQuery] int people, [FromQuery] string film, [FromQuery] string date, [FromQuery] string paymentDate, [FromQuery] string bookedBy)
         {
-            return _bookingService.isBookingSuccess(name , cell,email,location,people,film,date,paymentDate);
+            return _bookingService.IsBookingSuccess(name , cell,email,location,people,film,date,paymentDate, bookedBy);
+        }
+
+        [HttpGet("update-booking-status")]
+        public IEnumerable<Booking> UpdateBookingStatus([FromQuery] int id, [FromQuery] string username)
+        {
+            return _bookingService.UpdateStatus(id, username);
+        }
+
+        [HttpGet("delete-booking")]
+        public IEnumerable<Booking> DeleteBooking([FromQuery] int id, [FromQuery] string username)
+        {
+            return _bookingService.Delete(id, username);
         }
 
         // GET api/values/5

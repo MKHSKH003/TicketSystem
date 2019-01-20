@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@expo/samples": "2.1.1",
+    "@tele2/react-native-select-input": "^1.1.0",
     "dateformat": "^3.0.3",
     "expo": "^32.0.0",
     "react": "16.5.0",
