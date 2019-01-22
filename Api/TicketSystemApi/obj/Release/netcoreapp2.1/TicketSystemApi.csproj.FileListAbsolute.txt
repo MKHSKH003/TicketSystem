@@ -1,0 +1,14 @@
+C:\Users\dell\Downloads\Projects\TicketSystem\Api\TicketSystemApi\bin\Release\netcoreapp2.1\TicketSystemApi.deps.json
+C:\Users\dell\Downloads\Projects\TicketSystem\Api\TicketSystemApi\bin\Release\netcoreapp2.1\TicketSystemApi.runtimeconfig.json
+C:\Users\dell\Downloads\Projects\TicketSystem\Api\TicketSystemApi\bin\Release\netcoreapp2.1\TicketSystemApi.runtimeconfig.dev.json
+C:\Users\dell\Downloads\Projects\TicketSystem\Api\TicketSystemApi\bin\Release\netcoreapp2.1\TicketSystemApi.dll
+C:\Users\dell\Downloads\Projects\TicketSystem\Api\TicketSystemApi\bin\Release\netcoreapp2.1\TicketSystemApi.pdb
+C:\Users\dell\Downloads\Projects\TicketSystem\Api\TicketSystemApi\obj\Release\netcoreapp2.1\TicketSystemApi.csprojResolveAssemblyReference.cache
+C:\Users\dell\Downloads\Projects\TicketSystem\Api\TicketSystemApi\obj\Release\netcoreapp2.1\TicketSystemApi.csproj.CoreCompileInputs.cache
+C:\Users\dell\Downloads\Projects\TicketSystem\Api\TicketSystemApi\obj\Release\netcoreapp2.1\TicketSystemApi.RazorAssemblyInfo.cache
+C:\Users\dell\Downloads\Projects\TicketSystem\Api\TicketSystemApi\obj\Release\netcoreapp2.1\TicketSystemApi.RazorAssemblyInfo.cs
+C:\Users\dell\Downloads\Projects\TicketSystem\Api\TicketSystemApi\obj\Release\netcoreapp2.1\TicketSystemApi.AssemblyInfoInputs.cache
+C:\Users\dell\Downloads\Projects\TicketSystem\Api\TicketSystemApi\obj\Release\netcoreapp2.1\TicketSystemApi.AssemblyInfo.cs
+C:\Users\dell\Downloads\Projects\TicketSystem\Api\TicketSystemApi\obj\Release\netcoreapp2.1\TicketSystemApi.RazorTargetAssemblyInfo.cache
+C:\Users\dell\Downloads\Projects\TicketSystem\Api\TicketSystemApi\obj\Release\netcoreapp2.1\TicketSystemApi.dll
+C:\Users\dell\Downloads\Projects\TicketSystem\Api\TicketSystemApi\obj\Release\netcoreapp2.1\TicketSystemApi.pdb

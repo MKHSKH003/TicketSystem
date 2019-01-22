@@ -39,8 +39,7 @@ export default class Movies extends Component {
       const {movies, addMovie, updateMoviePrice,deleteMovie, username} = this.props;
     return (
       <ScrollView>
-      <Header props={this.props} />
-        <Button
+          <Button
           style={{marginTop:20}}
           color='#fff'
           title='ADD MOVIE'
