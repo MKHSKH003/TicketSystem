@@ -14,7 +14,6 @@ namespace TicketSystemApi
         {
             var host = new WebHostBuilder()
                 .UseKestrel()
-                .UseUrls("http://*:5201")
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()

@@ -4,8 +4,9 @@ import { bookingRequest } from '../../actions/bookingActions';
 
 export const mapStateToProps = (state) => {
     return {
-        username:state.loginReducer.username,
+        username: state.loginReducer.username,
         options: state.moviesReducer.options,
+        loading: state.bookingReducer.status.loading
     };
 };
 

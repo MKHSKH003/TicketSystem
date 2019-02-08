@@ -40,7 +40,7 @@ export default class Booking extends Component {
   render(value) 
   {
 
-      const {username, options}=this.props
+      const {username, options, loading}=this.props
       
     return (
     <ScrollView>
@@ -76,7 +76,7 @@ export default class Booking extends Component {
             
             <Button
                 color='#fff'
-                title='Submit'
+                title={loading? 'Loading...': 'Submit'}
                 onPress={()=>
                     this.props.booking(
                         this.state.name,

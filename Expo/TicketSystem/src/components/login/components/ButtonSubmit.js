@@ -47,7 +47,7 @@ export default class ButtonSubmit extends Component {
     }, 2000);
 
     setTimeout(() => {
-      Actions.newsFeed();
+      //Actions.newsFeed();
       this.setState({isLoading: false});
       this.buttonAnimated.setValue(0);
       this.growAnimated.setValue(0);
@@ -63,7 +63,7 @@ export default class ButtonSubmit extends Component {
   }
 
   render() {
-     const { userLogin, password, username } = this.props;
+     const { userLogin, password, username, loading } = this.props;
      const changeWidth = this.buttonAnimated.interpolate({
       inputRange: [0, 1],
       outputRange: [DEVICE_WIDTH - MARGIN, MARGIN],
@@ -78,9 +78,9 @@ export default class ButtonSubmit extends Component {
         <Animated.View style={{width: changeWidth}}>
           <TouchableOpacity
             style={styles.button}
-            onPress={()=>{userLogin(username,password);}}
+            onPress={()=>{this._onPress();userLogin(username,password)}}
             activeOpacity={1}>
-            {this.state.isLoading ? (
+            {loading ? (
               <Image source={spinner} style={styles.image} />
             ) : (
               <Text style={styles.text}>LOGIN</Text>

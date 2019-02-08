@@ -10031,11 +10031,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\dell\\Downloads\\Projects\\TicketSystem\\Api\\TicketSystemApi\\TicketSystemApi.csproj",
+      "projectUniqueName": "C:\\Users\\dell\\Downloads\\Projects\\Target Online\\Clients\\RuFilms\\Mobile App\\TicketSystem\\Api\\TicketSystemApi\\TicketSystemApi.csproj",
       "projectName": "TicketSystemApi",
-      "projectPath": "C:\\Users\\dell\\Downloads\\Projects\\TicketSystem\\Api\\TicketSystemApi\\TicketSystemApi.csproj",
+      "projectPath": "C:\\Users\\dell\\Downloads\\Projects\\Target Online\\Clients\\RuFilms\\Mobile App\\TicketSystem\\Api\\TicketSystemApi\\TicketSystemApi.csproj",
       "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dell\\Downloads\\Projects\\TicketSystem\\Api\\TicketSystemApi\\obj\\",
+      "outputPath": "C:\\Users\\dell\\Downloads\\Projects\\Target Online\\Clients\\RuFilms\\Mobile App\\TicketSystem\\Api\\TicketSystemApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

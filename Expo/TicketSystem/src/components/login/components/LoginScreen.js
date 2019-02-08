@@ -12,7 +12,7 @@ import SignupSection from './SignupSection';
 import { Col, Row, Grid } from "react-native-easy-grid";
 
 
-let LoginScreen = ({userLogin})=> (
+let LoginScreen = ({userLogin, loading})=> (
   <Grid>
         <Wallpaper >
           <LoginFailure  />
@@ -20,7 +20,7 @@ let LoginScreen = ({userLogin})=> (
           <Logo />
           </Row>
           <Row> 
-          <Form userLogin={userLogin}/>
+          <Form userLogin={userLogin} loading={loading}/>
           </Row>
         </Wallpaper>
         </Grid>

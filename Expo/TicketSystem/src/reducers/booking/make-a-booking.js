@@ -38,14 +38,17 @@ const bookingReducer = (state = initialState, action) => {
                     bookedBy:action.bookedBy
                 },
                 status:{
-                    bookingSuccess: false 
+                    bookingSuccess: false ,
+                    loading:true
+    
                  }
         };
      }
      case BOOKING_SUCCESS:{
         return { ...state, 
                  status:{
-                    bookingSuccess: true 
+                    bookingSuccess: true ,
+                    loading:false
                  }
             };
      }
@@ -53,7 +56,8 @@ const bookingReducer = (state = initialState, action) => {
         return { ...state, 
                  status:{
                     bookingError: true,
-                    bookingSuccess: false 
+                    bookingSuccess: false,
+                    loading:false
                  }
             };
      }

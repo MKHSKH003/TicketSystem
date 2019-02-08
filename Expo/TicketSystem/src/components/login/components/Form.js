@@ -67,7 +67,7 @@ onSubmit(){
 }
 
   render() {
-        const { userLogin } = this.props;
+        const { userLogin, loading } = this.props;
 
     return (
       <View  style={[styles.container,styles.responsiveBox ,[this.state.toggleIconEye && styles.btnEyeSAlt2]]}>
@@ -100,7 +100,7 @@ onSubmit(){
           <Image source={eyeImg} style={[styles.iconEye, this.state.toggleIconEye && styles.btnEyeSAlt]} />
         </TouchableOpacity>
         
-          <ButtonSubmit userLogin={userLogin} username={this.state.username} password={this.state.password} />
+          <ButtonSubmit loading={loading} userLogin={userLogin} username={this.state.username} password={this.state.password} />
           
       </View>
     );
